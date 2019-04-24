@@ -2,13 +2,19 @@ Audio Manager
 -----------------
 
 Audio Manager is, as the name implies, an audio manager with support for 3D spatialised audio for the Unity Engine.
+This is based on a Tutorial created by Brackeys, available here:
+https://www.youtube.com/watch?v=6OT43pvUyfY
+
 
 How to use:
 -----------
 
 1: Create an empty Gameobject and attach the AudioManager Component to it.
+
 2: Insert any audio files you wish to play into the AudioManager Component.
+
 3: Modify the array entries to your liking.
+
 4: Play the sounds via Play("Soundname", gameObject), or PlayOneShot("Soundname", gameObject).
 
 
