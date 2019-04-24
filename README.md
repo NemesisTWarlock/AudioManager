@@ -1,7 +1,7 @@
-Audio Manager 5.0
+Audio Manager
 -----------------
 
-Audio Manager is, as the name implies, an audio manager with support for 3D spatialised audio.
+Audio Manager is, as the name implies, an audio manager with support for 3D spatialised audio for the Unity Engine.
 
 How to use:
 -----------
