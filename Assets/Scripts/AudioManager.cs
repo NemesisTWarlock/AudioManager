@@ -35,13 +35,15 @@ public class AudioManager : MonoBehaviour
     {
 
 
-        if (emitter.GetComponent<AudioSource>() == null)
+        if (emitter.GetComponent<AudioSource>() != null)
         {
-            s.source = emitter.AddComponent<AudioSource>();
+            s.source = emitter.GetComponent<AudioSource>();
         }
         else
         {
+            emitter.AddComponent<AudioSource>();
             s.source = emitter.GetComponent<AudioSource>();
+            
         }
 
         s.source.clip = s.clip;
@@ -52,8 +54,8 @@ public class AudioManager : MonoBehaviour
             s.source.spatialize = true;
             s.source.rolloffMode = AudioRolloffMode.Linear;
             s.source.spatialBlend = 1f;
-            s.source.minDistance = s.mindistance;
-            s.source.maxDistance = s.maxdistance;
+            s.source.minDistance = s.minDistance;
+            s.source.maxDistance = s.maxDistance;
 
         }
 
@@ -72,9 +74,10 @@ public class AudioManager : MonoBehaviour
         //if there there is no sound specified y the string, throw an error
         if (s == null)
         {
-            Debug.LogWarning("Sound: " + s.name + " not found! Did you spell it correctly?");
+            Debug.Log("Sound: " + s.name + " not found! Did you spell it correctly?");
             return;
         }
+
         SetAudioStats(s, emitter);
         s.source.Play();
     }

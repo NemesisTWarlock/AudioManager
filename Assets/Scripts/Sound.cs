@@ -8,8 +8,10 @@ public class Sound {
 
 	public AudioClip clip;
 
+    
+
 	[Range(0f, 1f)]
-	public float volume = 1;
+	public float volume = 1f;
 	[Range(0f, 1f)]
 	public float volumeVariance = .1f;
 
@@ -18,18 +20,24 @@ public class Sound {
 	[Range(0f, 1f)]
 	public float pitchVariance = .1f;
     public AudioMixerGroup mixerGroup;
+
+    
  
 
 	[HideInInspector]
 	public AudioSource source;
 
 	public bool loop = false;
-    public bool spatialize = false;
+    public bool spatialize = true;
+
+   
 
 
-    [Header("Spatialization")]
-    public float mindistance;
-    public float maxdistance;
+    [Header("Spatialization Parameters")]
+    public float minDistance = 1.5f;
+    public float maxDistance = 3.0f;
+    [Range(0f, 360f)]
+    public float spread = 0f;
 
 
 
